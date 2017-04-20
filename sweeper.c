@@ -58,6 +58,7 @@ static int adj_mine(const struct ms_board *b, int x, int y) {
   return count;
 }
 
+// reveal adjacent tiles of (x,y)
 static void rev_adj(struct ms_board *b, int x, int y) {
   assert(b);
   char * board = b->board;
