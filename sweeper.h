@@ -19,6 +19,18 @@ struct ms_board;
 
 bool flag(struct ms_board *b, int x, int y);
 
+// is_mine(b, x, y) returns true if (x,y) cooresponding to MINE and false otherwise
+// requires: *b is a valid
+//           1 <= x <= b->width
+//           1 <= y <= b->height
+bool is_mine(const struct ms_board *b, int x, int y);
+
+// adj_mine(b, x, y) returns the numvr of mines adjacent to (x,y)
+// requires: *b is a valid
+//           1 <= x <= b->width
+//           1 <= y <= b->height
+int adj_mine(const struct ms_board *b, int x, int y);
+
 // reveal(b, x, y) reveals (x,y) and replaces it with either a MINE
 //   or the number of mines adjacent to (x,y), returns true if successful and false if the tile (x,y) 
 //   was already REVEALED, a MINE or a FLAG, if no minew is adjacented, it also reveals all unrevealed adjacent neighbours,
